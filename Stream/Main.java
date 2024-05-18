@@ -18,23 +18,14 @@ public class Main {
 
             newList.stream().sorted(Comparator.comparing((Users u) -> u.name).reversed()).collect(Collectors.toList());
 
-
-            System.out.println(newList.stream().sorted(Comparator.comparing((Users u) -> u.name).reversed()).collect(Collectors.toList()));
-
-
             System.out.println(newList.stream()
                     .sorted(Comparator.comparing((Users e )->e.id).reversed())
                     .collect(Collectors.toList()));
 
-            System.out.println(newList.stream()
-                    .sorted(Comparator.comparing((Users e)->e.name).reversed())
-                    .collect(Collectors.toList()));
             Integer ac = 0;
             System.out.println(newList.stream()
                     .sorted(Comparator.comparing((Users e)->e.name).reversed())
                     .reduce(ac, (acc, e) -> acc + e.id, Integer::sum));
             System.out.println(ac);
-
-
         }
 }
